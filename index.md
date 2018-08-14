@@ -611,16 +611,15 @@ and our administrator may contact you if we need any extra information.</h4>
 {% endcomment %}
 </div> {% comment %} End of 'Python' section. {% endcomment %}
 
+<!--
 <div id="r"> {% comment %} Start of 'R' section. {% endcomment %}
   <h3>R</h3>
-
   <p>
     <a href="https://www.r-project.org">R</a> is a programming language
     that is especially powerful for data exploration, visualization, and
     statistical analysis. To interact with R, we use
     <a href="https://www.rstudio.com/">RStudio</a>.
   </p>
-
   <div class="row">
     <div class="col-md-4">
       <h4 id="r-windows">Windows</h4>
@@ -661,6 +660,7 @@ and our administrator may contact you if we need any extra information.</h4>
     </div>
   </div>
 </div> {% comment %} End of 'R' section. {% endcomment %}
+-->
 
 <div id="sql"> {% comment %} Start of 'SQLite' section. {% endcomment %}
   <h3>SQLite</h3>
