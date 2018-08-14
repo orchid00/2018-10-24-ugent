@@ -707,6 +707,7 @@ and our administrator may contact you if we need any extra information.</h4>
 </div> {% comment %} End of 'SQLite' section. {% endcomment %}
 -->
 
+<!--
 <div id="openrefine"> {% comment %} Start of 'OpenRefine' section. {% endcomment %}
   <h3>OpenRefine</h3>
   <p>
@@ -714,7 +715,6 @@ and our administrator may contact you if we need any extra information.</h4>
     web browser. <em>Note:</em> this is a Java program that runs on your machine (not in the cloud).
     It runs inside a web browser, but no web connection is needed.
   </p>
-
   <div class="row">
     <div class="col-md-4">
       <h4 id="openrefine-windows">Windows</h4>
@@ -753,6 +753,7 @@ and our administrator may contact you if we need any extra information.</h4>
     </div>
   </div>
 </div> {% comment %} End of 'OpenRefine' section. {% endcomment %}
+-->
 
 {% comment %}
 <div id="vm">
