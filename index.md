@@ -135,7 +135,7 @@ and our administrator may contact you if we need any extra information.</h4>
   <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
 </p>
 <p>
-  <strong>Registration:</strong> Registrations are open everyone interested in learning basic programming skills for reproducible research. <a href= "http://www.vib.be/en/training/research-training/courses/Pages/ELIXIR_SoftwareCarpentry_Ghent.aspx">Registrations are open here </a>
+  <strong>Registration:</strong> Registrations are open everyone interested in learning basic programming skills for reproducible research. <a href= "http://www.vib.be/en/training/research-training/courses/Pages/ELIXIR_SoftwareCarpentry_Ghent.aspx" target="_blank"><strong>Registrations are open here</strong>. </a>
 </p>
 {% comment %}
   ACCESSIBILITY
