@@ -137,7 +137,7 @@ and our administrator may contact you if we need any extra information.</h4>
 <p><strong>Registration:</strong> Thanks for your interest in this workshop. <strong>We have reached capacity and registrations are now closed</strong>.
 </p>
 <p>For other workshops you can have a look at <a href="https://tess.elixir-europe.org/" target="_blank">TeSS</a> our training events collection from different ELIXIR partners.</p>
-<p>If there are any questions please get in contact, we are happy to help. If you would like to be placed on a waiting list, please also send an email.</p> 
+<p>If there are any questions get in contact, we are happy to help. If you would like to be placed on a waiting list, please also send an email.</p> 
 <p>This workshop is being sponsored by the <a href="https://www.elixir-europe.org/about-us/how-funded/eu-projects/excelerate" target="_blank">ELIXIR – EXCELERATE program.</a> Hence you only need to cover your travel expenses (if any).
 <img src="https://cdn.evbuc.com/eventlogos/56278121/logoexcelerateeuflagacknowledgement.png" alt="ELIXIR – EXCELERATE">
 </p>
