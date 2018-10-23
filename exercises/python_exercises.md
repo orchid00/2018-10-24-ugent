@@ -29,17 +29,17 @@ If the computer can't understand the code, it will burp an error message
 
 ## Variables
 
-Values can be fixed, calculated or a result of a transformation. Variables follow namin conventions
+Values can be fixed, calculated or a result of a transformation. Variables follow naming conventions
 - s
 - h
 - n
 
 
 ## Data types
--i
--f
--s
--b
+- i
+- f
+- s
+- b
 
 
 ## Methods
