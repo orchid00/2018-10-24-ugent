@@ -131,6 +131,10 @@ What variables do we have so far?
     - Save this DataFrame into a variable called `processed`
     - use processed.columns.format you should get this 
     `['gdpPercap_1997', 'gdpPercap_2002', 'gdpPercap_2007']`
+    
+    Exercise - optional
+    - subset your favorite country
+    
 
 ## Saving results
 
