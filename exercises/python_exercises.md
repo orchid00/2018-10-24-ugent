@@ -298,5 +298,6 @@ plt.plot(year, gdpAUS, 'y--')
 * Gapminder report https://hub.mybinder.org/user/orchid00-python_gapminder_report-6zs0h8qa/notebooks/scripts/01_GapminderReport.ipynb
 
 
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html
 https://mybinder.org/v2/gh/orchid00/python_gapminder_report/master?filepath=scripts%2F01_GapminderReport.ipynb
-short git guide http://rogerdudler.github.io/git-guide/
+
