@@ -80,7 +80,32 @@ Helpers:
 
 
 Learners:
-
+PAN
+Peter
+Assia
+ Jennifer Jörissen
+ Laura Van Poelvoorde
+ Bas Berbers 
+Sarah VW
+ Amanda 
+  hilda 
+Lisa
+Sari CogneauJonna Bouwknegtzongcheng
+Florence BuytaersStéphanie Nouws
+Ji
+jasmijn
+Attila Manel
+Pieter-Jan Kerkhof
+Asli Kucukosmanoglu
+Emilie Froussart
+gwen
+Monah
+Sinaeda Anderssen
+Gaurav
+Floris
+Rafael
+Mohamed
+Sarah
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Project organization
 We recommend you to prepare the following folders to organize the contents of this workshop
@@ -96,10 +121,181 @@ We recommend you to prepare the following folders to organize the contents of th
 Day 1 Shell
 
 data:    http://swcarpentry.github.io/shell-novice/data/data-shell.zip
+
+command -flag -flag parameter
+
+Feedback https://goo.gl/XLQZEb 
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Day 1 Python 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Folder sctructure
+├── python-novice
+     ├── data   http://swcarpentry.github.io/python-novice-gapminder/files/python-novice-gapminder-data.zip
+     
+     Download a file from the internet
+     # Linux
+     wget http://swcarpentry.github.io/python-novice-gapminder/files/python-novice-gapminder-data.zip
+     # for gitbash or Mac
+     curl -O http://swcarpentry.github.io/python-novice-gapminder/files/python-novice-gapminder-data.zip
+     
+     # to unzip the compress file
+     unzip python-novice-gapminder-data.zip
+     
+     └── scripts
+     
+     
+Notebooks
+
+Open Jupyter
+On the shell from linux and Mac
+jupyter notebook
+If you have windows open your installed programs from the search and fnd jupyter notebook
+
+
+Exercise
+
+- Create a new notebook called `00_basics` in your `scripts` folder
+- Click on the `Help` option from the top menu and follow the tour `User interface Tour`
+This tour will show you how everything is laid out 
+- What happends when you press `p`?
+
+
+Variables
+Values can be fixed, calculated or a result of a transformation. Variables follow naming conventions
+
+    no spaces
+
+    no hyphens
+
+    no numbers at the start
+
+
+Data types
+
+    integer
+
+    float
+
+    string
+
+    bool
+
+
+# load the library
+import pandas
+
+Exercise - Reading in files (3 min)
+
+- Use `pandas.read_csv()`  to import data into Python
+you will store three variables named `africa`, `europe`, `anz` from
+`gapminder_gdp_africa.csv`, `gapminder_gdp_europe.csv`, `gapminder_gdp_oceania.csv` 
+use `index_col='country'`
+
+africa = pandas.read_csv('../data/gapminder_gdp_africa.csv' , index_col = "country")
+europe = pandas.read_csv('../data/gapminder_gdp_europe.csv' , index_col = "country")
+
+- It is recommended that you always use the help to find out more about the new 
+functions before using them
+
+- Check the function `.info()` with your new variables
+
+DataFramesDataFrames atributes
+No parentesis
+
+    df.columns # Column names or titles
+
+    df.index      # Row names if you specify index_col it will that value, if not it will be numbered from 0
+
+    df.axes       # Rows and column names 
+
+    df.dtypes    # data types
+
+    df.shape     # number of rows and columns carefull with the index 
+
+    df.ndim       # number of dimensions DataFrames should be 2 
+
+    df.size        # total number of cells in your dataFrame
+
+    df.values    # array representation of all values
+
+    df.T           # transpose reverse rows and columns 
+
+
+Data Frames methods
+
+    df.info()
+
+    df.describe()
+
+    df.head()
+
+    df.tail()
+
+
+What variables do we have so far?
+Exercise - Americas (2 min)
+
+- Read the dataset `gapminder_gdp_americas.csv` (which should be in the same 
+directory as `gapminder_gdp_oceania.csv`) and index by `country` into a 
+variable called `americas`
+- After reading the data for the Americas, use `help(americas.head)` and 
+`help(americas.tail)` to find out what `DataFrame.head` and `DataFrame.tail` do.
+
+  - What method call will display the first three rows of this data?
+  - What method call will display the last three columns of this data? 
+  (Hint: you may need to change your view of the data.)
+
+- Display its summary statistics of `americas
+
+americas.head(n = 3)
+americas.tail(n = 3)
+amr.describe()
+Subsetting I
+Exercise - optional
+
+- Using `americas` transpose the DataFrame, get the last three rows and then transpose it again
+- Save this DataFrame into a variable called `processed`
+- use processed.columns.format you should get this 
+`['gdpPercap_1997', 'gdpPercap_2002', 'gdpPercap_2007']`
+
+americas.T.tail(3).T
+
+Exercise - optional
+- subset your favorite country
+
+ Exercise - optional
+
+- Using the `europe` DataFrame get the GDP value from 2007 in `Greece` 
+- The GDP value from 1952 in `Iceland`. Use two lines of code
+- Optional, try getting the result as a DataFrame 2x2. Use one line of code
+
+Subsetting information from a DataFrame
+europe.iloc # subset a part of the dataframe using index
+europe.loc # subset a part of the dataframe by name
+favoritecountry = europe.loc['Belgium'] # by row name
+europe.gdpPercap_1997 picks the column gdpPercap_1997
+
+europe.loc['Greece','gdpPercap_2007']
+europe.loc[('Iceland','Greece'),('gdpPercap_1952','gdpPercap_2007')]
+
+help(processed.to_excel)
+Exercise
+
+- Let's make a folder results at the same level of data and scripts
+- Save `processed` (or any other variable) into the `results` as a excel file with `sheet_name='lastyearsGDP'`  extension .xlsx
+- Open the file to check how it looks
+- Let's also save the `processed` as a `csv`
+
+
+Plotting
+%matplotlib inline 
+import matplotlib.pyplot as plt
+
+europe.plot()
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Day 2 Python
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Day 2 Git and Github
@@ -147,3 +343,4 @@ Resources
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
