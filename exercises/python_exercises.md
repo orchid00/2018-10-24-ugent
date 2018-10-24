@@ -295,3 +295,8 @@ plt.plot(year, gdpAUS, 'y--')
 * Pandas cheatsheet datacamp https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PandasPythonForDataScience+(1).pdf
 * Python matplotlib https://matplotlib.org/users/dflt_style_changes.html
 * Python Style guide https://www.python.org/dev/peps/pep-0008/
+* Gapminder report https://hub.mybinder.org/user/orchid00-python_gapminder_report-6zs0h8qa/notebooks/scripts/01_GapminderReport.ipynb
+
+
+https://mybinder.org/v2/gh/orchid00/python_gapminder_report/master?filepath=scripts%2F01_GapminderReport.ipynb
+short git guide http://rogerdudler.github.io/git-guide/
