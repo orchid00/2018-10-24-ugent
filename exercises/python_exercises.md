@@ -3,7 +3,7 @@
 ## Aim
 
 To go from gaining new knowledge to comprehension of the foundations of Python and being able to apply this knowledge for data
-manipulation and ploting
+manipulation and visualization
 
 Programming is a creative process, that uses building blocks
 Each instruction you give is a building block, essentially you tell the computer “Do this; then do that.”
