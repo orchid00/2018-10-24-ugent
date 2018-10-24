@@ -72,10 +72,13 @@ Remember Python is case sensitive
     `gapminder_gdp_africa.csv`, `gapminder_gdp_europe.csv`, `gapminder_gdp_oceania.csv` 
     use `index_col='country'`
 
-    - It is recommended that you always use the help to find out more about the new functions before using them
+    - It is recommended that you always use the help to find out more about the new 
+    functions before using them
 
     - Check the function `.info()` with your new variables
     
+
+# DataFrames
 
 ## DataFrames atributes
 
@@ -106,15 +109,37 @@ What variables do we have so far?
 
     Exercise - Americas (2 min)
 
-    - Read the dataset `gapminder_gdp_americas.csv` (which should be in the same directory as `gapminder_gdp_oceania.csv`) and index by `country` into a variable called `americas`
-    - After reading the data for the Americas, use `help(americas.head)` and `help(americas.tail)` to find out what `DataFrame.head` and `DataFrame.tail` do.
+    - Read the dataset `gapminder_gdp_americas.csv` (which should be in the same 
+    directory as `gapminder_gdp_oceania.csv`) and index by `country` into a 
+    variable called `americas`
+    - After reading the data for the Americas, use `help(americas.head)` and 
+    `help(americas.tail)` to find out what `DataFrame.head` and `DataFrame.tail` do.
 
       - What method call will display the first three rows of this data?
-      - What method call will display the last three columns of this data? (Hint: you may need to change your view of the data.)
+      - What method call will display the last three columns of this data? 
+      (Hint: you may need to change your view of the data.)
 
     - Display its summary statistics of `americas`
    
+   
+## Subsetting
 
+    Exercise
+
+    - Using `americas` transpose the DataFrame, get the last three rows and then transpose it again
+    - Save this DataFrame into a variable called `processed`
+    - use processed.columns.format you should get this `['gdpPercap_1997', 'gdpPercap_2002', 'gdpPercap_2007']`
+
+
+## Saving results
+
+`help(processed.to_excel)`
+
+    Exercise
+
+    - Let's make a folder results at the same level of data and scripts
+    - Save `processed` into the `results` as a excel file with `sheet_name='lastyearsGDP'`
+    - Open the file to check how it looks
 
 ## Plotting
 
