@@ -58,9 +58,12 @@ help()
 
 ## Import files
 
-Let’s introduce some data to Python.
+Let’s introduce some data to Python in a new notebook called `01_pandas`
 First, make sure you have a data folder!
 Remember Python is case sensitive
+
+    # load the library
+    import pandas
 
     Exercise - Reading in files (3 min)
 
@@ -79,11 +82,14 @@ Remember Python is case sensitive
 No parentesis
 
 - df.columns
+- df.index
 - df.axes
 - df.dtypes
 - df.shape
 - df.size
 - df.values
+- df.T
+
 
 ## Data Frames methods
 
@@ -91,6 +97,11 @@ No parentesis
 - df.describe()
 - df.head()
 - df.tail()
+- df.len()
+
+
+
+What variables do we have so far?
 
 
     Exercise - Americas (2 min)
