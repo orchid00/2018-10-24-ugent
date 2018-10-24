@@ -27,6 +27,14 @@ https://jupyter.org/
 ## Errors are Okay!
 If the computer can't understand the code, it will burp an error message
 
+# Notebooks
+    Exercise
+
+    - Create a new notebook called `00_basics` in your `scripts` folder
+    - Click on the `Help` option from the top menu and follow the tour `User interface Tour`
+    This tour will show you how everything is laid out 
+    - What happends when you press `p`?
+
 ## Variables
 
 Values can be fixed, calculated or a result of a transformation. Variables follow naming conventions
@@ -64,6 +72,37 @@ Remember Python is case sensitive
     - It is recommended that you always use the help to find out more about the new functions before using them
 
     - Check the function `.info()` with your new variables
+    
+
+## DataFrames atributes
+
+No parentesis
+
+- df.columns
+- df.axes
+- df.dtypes
+- df.shape
+- df.size
+- df.values
+
+## Data Frames methods
+
+- df.info()
+- df.describe()
+- df.head()
+- df.tail()
+
+
+    Exercise - Americas (2 min)
+
+    - Read the dataset `gapminder_gdp_americas.csv` (which should be in the same directory as `gapminder_gdp_oceania.csv`) and index by `country` into a variable called `americas`
+    - After reading the data for the Americas, use `help(americas.head)` and `help(americas.tail)` to find out what `DataFrame.head` and `DataFrame.tail` do.
+
+      - What method call will display the first three rows of this data?
+      - What method call will display the last three columns of this data? (Hint: you may need to change your view of the data.)
+
+    - Display its summary statistics of `americas`
+   
 
 
 ## Plotting
