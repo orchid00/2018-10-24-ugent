@@ -145,10 +145,11 @@ What variables do we have so far?
     
 ## Subsetting II
 
-     Exercise
+     Exercise - optional
 
-    - Using the `europe` DataFrame get the GDP value from 2007 in `Greece` and the GDP value from 1952 in `Iceland` 
-    - Optional, try getting the result as a DataFrame 2x2
+    - Using the `europe` DataFrame get the GDP value from 2007 in `Greece` and 
+     the GDP value from 1952 in `Iceland`. Use two lines of code
+    - Optional, try getting the result as a DataFrame 2x2. Use one line of code
 
 Solved: 
 
@@ -166,29 +167,32 @@ df.loc[]
 
     - What can you infer based on this?
 
-#### Exercise
-- Using the `europe` dataset, write a line of code to get each of the following:
+More 
 
-    GDP per capita for all countries in 1982.
-    GDP per capita for Denmark for all years.
-    GDP per capita for all countries for years after 1985.
+    Exercise - optional
+    - Using the `europe` dataset, write a line of code to get each of the following:
 
---------------------------Comparisons -----------------------------
+        GDP per capita for all countries in 1982.
+        GDP per capita for Denmark for all years.
+        GDP per capita for all countries for years after 1985.
 
-# Use a subset of data to keep output readable.
-subset = europe.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']
-print('Subset of data:\n', subset)
+## Comparisons
 
-#### Exercise
+Use a subset of data to keep output readable.
 
-- Which values are greater than 10000 ?
-    `subset > 10000`
+    subset = europe.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']
+    print('Subset of data:\n', subset)
+
+    Exercise
+
+    - Which values are greater than 10000 ?
+        `subset > 10000`
 
 Useful because NaNs are ignored by operations like max(), min(), average(), etc.
 
-#### Exercise
+    Exercise - optional
 
-- Select from `subset` columns `'gdpPercap_1962', 'gdpPercap_1972'` and get the `sum()` of each column
+    - Select from `subset` columns `'gdpPercap_1962', 'gdpPercap_1972'` and get the `sum()` of each column
 
 
 
