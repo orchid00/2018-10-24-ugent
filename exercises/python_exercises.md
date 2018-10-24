@@ -255,6 +255,24 @@ Solved
     plt.style.use('default')
     europe.T.iloc[:,0:2].plot()
    
+## Play time
+
+    # Extract year from last 4 characters of each column name
+    yearsAUD = anz.columns.str.strip('gdpPercap_')
+    # Convert year values to integers, saving results back to dataframe
+    anz.columns = yearsAUD.astype(int)
+
+    print(anz)
+
+.
+
+    Exercise
+    - Make a plot of GDP growth in Asutralia using the new years
+    - Change the blue line for a yellow dashed line
+    
+Solved
+
+plt.plot(year, gdpAUS, 'y--')
 
 # Resources
 
