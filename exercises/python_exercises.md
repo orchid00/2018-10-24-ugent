@@ -52,6 +52,7 @@ Values can be fixed, calculated or a result of a transformation. Variables follo
 
 ## Methods
 help()
+print()
 
 `Crtl + c`
 
@@ -192,12 +193,64 @@ Useful because NaNs are ignored by operations like max(), min(), average(), etc.
 
     Exercise - optional
 
-    - Select from `subset` columns `'gdpPercap_1962', 'gdpPercap_1972'` and get the `sum()` of each column
-
-
+    - Select from `subset` columns `'gdpPercap_1962', 'gdpPercap_1972'` and get the 
+    `sum()` of each column
 
 
 ## Plotting
+
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+europe.plot()
+
+
+We can also customize
+
+plt.plot(europe.gdpPercap_1952, europe.gdpPercap_1957, "o")
+plt.xlabel('GDP (1952)')
+plt.ylabel('GDP (1957)')
+
+
+plot()
+
+    Exercise
+
+    - make a line plot from `anz` where you can see the trend of GDP growth
+    (tip your plot has 2 lines)
+
+Solved
+
+    anz.T.plot()
+ 
+Legend
+
+    Exercise
+    
+    - make a line plot of the first five countries in `europe` save it in a variable `p`
+    - add `p.legend(loc='best', bbox_to_anchor=(1,1))` and see what changes
+
+Labels
+
+    Exercise - optional
+    - Are you interested in rotating your x labels?
+    `matplotlib.pyplot.xticks(rotation='vertical')`
+
+Style
+
+    plt.style.use('Solarize_Light2')
+    anz.T.plot(kind='box')
+    
+    Exercise
+    
+    - check `plt.style.available` pick one from the list and make sure you have 
+    a different sytle of plot than your neighbour
+ 
+Solved
+
+    plt.style.use('default')
+    europe.T.iloc[:,0:2].plot()
+   
 
 # Resources
 
