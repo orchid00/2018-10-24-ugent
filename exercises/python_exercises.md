@@ -122,14 +122,14 @@ What variables do we have so far?
     - Display its summary statistics of `americas`
    
    
-## Subsetting
+## Subsetting I
 
     Exercise
 
     - Using `americas` transpose the DataFrame, get the last three rows and then transpose it again
     - Save this DataFrame into a variable called `processed`
-    - use processed.columns.format you should get this `['gdpPercap_1997', 'gdpPercap_2002', 'gdpPercap_2007']`
-
+    - use processed.columns.format you should get this 
+    `['gdpPercap_1997', 'gdpPercap_2002', 'gdpPercap_2007']`
 
 ## Saving results
 
@@ -140,6 +140,58 @@ What variables do we have so far?
     - Let's make a folder results at the same level of data and scripts
     - Save `processed` into the `results` as a excel file with `sheet_name='lastyearsGDP'`
     - Open the file to check how it looks
+    - Let's also save the `processed` as a `csv`
+    
+    
+## Subsetting II
+
+     Exercise
+
+    - Using the `europe` DataFrame get the GDP value from 2007 in `Greece` and the GDP value from 1952 in `Iceland` 
+    - Optional, try getting the result as a DataFrame 2x2
+
+Solved: 
+
+        europe.loc[['Iceland','Greece'],['gdpPercap_1952', 'gdpPercap_2007']]
+
+
+df.iloc[]
+df.loc[]
+
+    Exercise
+
+    - Do the two statements below produce the same output?
+    print(europe.iloc[0:2, 0:2])
+    print(europe.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
+
+    - What can you infer based on this?
+
+#### Exercise
+- Using the `europe` dataset, write a line of code to get each of the following:
+
+    GDP per capita for all countries in 1982.
+    GDP per capita for Denmark for all years.
+    GDP per capita for all countries for years after 1985.
+
+--------------------------Comparisons -----------------------------
+
+# Use a subset of data to keep output readable.
+subset = europe.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']
+print('Subset of data:\n', subset)
+
+#### Exercise
+
+- Which values are greater than 10000 ?
+    `subset > 10000`
+
+Useful because NaNs are ignored by operations like max(), min(), average(), etc.
+
+#### Exercise
+
+- Select from `subset` columns `'gdpPercap_1962', 'gdpPercap_1972'` and get the `sum()` of each column
+
+
+
 
 ## Plotting
 
