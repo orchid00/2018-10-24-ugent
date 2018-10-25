@@ -1,5 +1,5 @@
 Software Carpentry                                                            Hosted by ELIXIR Belgium
-Wed-Thu, Oct 24-25, 2018                                                 Location: ICC Ghent
+Wed-Thu, Oct 24-25, 2018                                                  Location: ICC Ghent
 Workshop website                                                              https://orchid00.github.io/2018-10-24-ugent/
  
 
@@ -34,7 +34,7 @@ Make you sure you have filled the Software Carpentry workshop pre-survey so we k
 https://www.surveymonkey.com/r/swc_pre_workshop_v1?workshop_id=2018-10-24-ugent
 
 Post-survey
-
+https://tiny.cc/elixir_feedback
 https://www.surveymonkey.com/r/swc_post_workshop_v1?workshop_id=2018-10-24-ugent
 
 Sticky Notes: Use these on the back of your laptop to signal us 
@@ -220,7 +220,7 @@ No parentesis
 
     df.values    # array representation of all values
 
-    df.T           # transpose reverse rows and columns 
+    df.T            # transpose = reverse rows and columns 
 
 
 Data Frames methods
@@ -251,7 +251,8 @@ variable called `americas`
 
 americas.head(n = 3)
 americas.tail(n = 3)
-amr.describe()
+americas.describe()
+
 Subsetting I
 Exercise - optional
 
@@ -279,6 +280,8 @@ europe.gdpPercap_1997 picks the column gdpPercap_1997
 
 europe.loc['Greece','gdpPercap_2007']
 europe.loc[('Iceland','Greece'),('gdpPercap_1952','gdpPercap_2007')]
+or
+europe.loc[('Iceland','Greece'),('gdpPercap_1952','gdpPercap_2007')]
 
 help(processed.to_excel)
 Exercise
@@ -297,8 +300,180 @@ europe.plot()
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Day 2 Python
+
+Welcome to day 2!
+
+We will start with some plots using python
+
+So create a plots folder at the same level as data and scripts 
+
+├── python-novice
+     ├── data
+     ├── scripts
+     ├── results
+     ├── plots
+
+then inside scripts create a new notebook 03_plots
+
+kinds of plots https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html
+
+# selecting I countries 
+
+gdp_i = europe.loc[('Italy', 'Ireland', 'Iceland'),]
+
+plt.plot(years, gdp_i.iloc[0], 'g--', label='Italy')
+
+
+plt.plot(years, gdp_i.iloc[0], 'g--', label='Italy')
+plt.plot(years, gdp_i.iloc[1], 'y--', label='Ireland')
+plt.plot(years, gdp_i.iloc[2], 'r--', label='Iceland')
+plt.legend(loc= 'best')
+plt.xlabel('Years')
+plt.ylabel('GDP per Cap')
+plt.title('GDP per cap in Italy, Ireland and Iceland')
+
+plt.savefig('../plots/GDP_i_countries.png')
+
+# how to move the legend outside
+p = countries_major_increment.plot(kind='bar')
+p.legend(years, loc = 'best', bbox_to_anchor=(1,1))
+
+
+https://matplotlib.org
+https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.plot.html
+
+
+
+Problem of Sina:
+years = anz.columns.str.strip("gdpPercap_") 
+anz.columns = years 
+anz.columns anz.T.plot() 
+plt.ylabel("GDP per capital") 
+plt.xlabel("years")
+fig, axs = plt.subplots() 
+anz.T.plot(ax=axs) 
+#ax.set_xticks(range(13)) 
+ax.set_xticklabels(np.array(years))
+-> Possible solution (pure pandas style):
+    
+anz = pd.read_csv("data/gapminder_gdp_oceania.csv", index_col = "country")
+anz = anz.T.reset_index()
+anz["years"] = anz["index"].str.split(pat="_", expand = True)[1]
+anz = anz.set_index("years")
+anz.index = anz.index.astype(int)
+anz.plot()
+
+
+
+LOOPS
+
+Total length of the strings in the list: ["red", "green", "blue"] => 12
+total = 0
+for word in ["red", "green", "blue"]:
+    ____ = ____ + len(word)
+print(total)
+
+
+# List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
+lengths = ____
+for word in ["red", "green", "blue"]:
+    lengths.____(____)
+print(lengths)
+
+https://numpydoc.readthedocs.io/en/latest/format.html
+
+Fill in the blanks to create a function that takes a single filename as an argument, loads the data in the file named by the argument, and returns the minimum value of column gdpPercap_1972 in that data:
+    
+import pandas
+
+def min_in_data(____):
+    data = ____
+    return ____
+
+Print date with all exceptions:
+    def print_date(year, month, day):    
+        assert month <= 12 and len(str(year)) == 4    
+        months31 = [1,3,5,7,8,10,12]    months30 = [4,6,9,11]    
+        if month in months31:
+                    assert day <= 31
+        if month in months30: 
+                   assert day <= 30    
+        if (year%4 == 0 and month==2):
+                    assert day <= 29    
+        elif (month == 2 and year%4 != 0):
+                    assert day <= 28    
+        print(year, "/", month,"/", day)
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Day 2 Git and Github
+
+# first open a terminal or git bash
+git
+# what the version
+git --version
+# Introduce ourselves - the first time you are useing git
+git config --global user.name "Mona Lisa"
+git config --global user.email "your@email.com"
+
+# to check config
+git config --list
+
+# inititialize a git repo in the location that you are
+git init
+#Initialized empty Git repository in <location>.git/
+
+# not everything needs to be stored in your version control
+nano .gitignore
+
+
+cat .gitignore 
+git status
+git add .gitignore 
+git add scripts/*
+git status
+git add *
+git commit -m "added .gitignore and scripts utils.py"
+git status
+nano README.md
+cat README.md 
+git status
+git add README.md 
+git status
+git commit -m "added a README"
+git status
+git log
+
+
+# moving to the cloud
+login to GitHub
+
+Right Top corner 
+"New Repository"
+
+Repository Name: python-novice
+Description: Our Python project online
+Public
+No check boxes
+
+# how to connect your github with your local repo
+git remote add origin <server-URL>
+git remote set-url origin 
+
+Resources
+
+    https://www.datacamp.com/courses/introduction-to-git-for-data-science
+
+    git config https://help.github.com/articles/setting-your-username-in-git/#platform-linux
+
+    git staging area http://swcarpentry.github.io/git-novice/fig/git-staging-area.svg
+
+    remote http://swcarpentry.github.io/git-novice/fig/github-repo-after-first-push.svg
+
+    short git guide http://rogerdudler.github.io/git-guide/
+
+
+https://software-carpentry.org/lessons/
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Resources
 
@@ -340,7 +515,18 @@ Resources
 
     Python Style guide https://www.python.org/dev/peps/pep-0008/
 
+    Python notebook example RNA-Seq Zika virus http://nbviewer.jupyter.org/github/maayanlab/Zika-RNAseq-Pipeline/blob/master/Zika.ipynb
+
+    Python notebook gapminder example https://mybinder.org/v2/gh/orchid00/python_gapminder_report/master?filepath=scripts%2F01_GapminderReport.ipynb
+
+    matplotlib inline https://ipython.readthedocs.io/en/stable/interactive/plotting.html
+
+    https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html
+
+    https://mybinder.org/v2/gh/orchid00/python_gapminder_report/master?filepath=scripts%2F01_GapminderReport.ipynb
 
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
