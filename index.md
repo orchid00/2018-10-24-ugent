@@ -53,7 +53,7 @@ If you are running a self-organized workshop or have not put in a workshop reque
 and our administrator may contact you if we need any extra information.</h4>
 {% endcomment %}
 
-<h2 id="general">General Information</h2>
+<h2 id="general">General information</h2>
 
 {% comment %}
   INTRODUCTION
